@@ -26,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,17 +50,15 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -103,6 +102,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -187,9 +187,73 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202403211800209_MenuItem.cs" />
+    <Compile Include="Migrations\202403211800209_MenuItem.designer.cs">
+      <DependentUpon>202403211800209_MenuItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211809407_Order.cs" />
+    <Compile Include="Migrations\202403211809407_Order.designer.cs">
+      <DependentUpon>202403211809407_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211811290_Category.cs" />
+    <Compile Include="Migrations\202403211811290_Category.designer.cs">
+      <DependentUpon>202403211811290_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211813267_Brewery.cs" />
+    <Compile Include="Migrations\202403211813267_Brewery.designer.cs">
+      <DependentUpon>202403211813267_Brewery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211814364_Beer.cs" />
+    <Compile Include="Migrations\202403211814364_Beer.designer.cs">
+      <DependentUpon>202403211814364_Beer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211817342_Attendee.cs" />
+    <Compile Include="Migrations\202403211817342_Attendee.designer.cs">
+      <DependentUpon>202403211817342_Attendee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211819149_Reception.cs" />
+    <Compile Include="Migrations\202403211819149_Reception.designer.cs">
+      <DependentUpon>202403211819149_Reception.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211822381_MenuItemDTO.cs" />
+    <Compile Include="Migrations\202403211822381_MenuItemDTO.designer.cs">
+      <DependentUpon>202403211822381_MenuItemDTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211824447_OrderDTO.cs" />
+    <Compile Include="Migrations\202403211824447_OrderDTO.designer.cs">
+      <DependentUpon>202403211824447_OrderDTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211826358_CategoryDTO.cs" />
+    <Compile Include="Migrations\202403211826358_CategoryDTO.designer.cs">
+      <DependentUpon>202403211826358_CategoryDTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211828232_BreweryDTO.cs" />
+    <Compile Include="Migrations\202403211828232_BreweryDTO.designer.cs">
+      <DependentUpon>202403211828232_BreweryDTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211829144_BeerDTO.cs" />
+    <Compile Include="Migrations\202403211829144_BeerDTO.designer.cs">
+      <DependentUpon>202403211829144_BeerDTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211830243_AttendeeDTO.cs" />
+    <Compile Include="Migrations\202403211830243_AttendeeDTO.designer.cs">
+      <DependentUpon>202403211830243_AttendeeDTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403211831413_ReceptionDTO.cs" />
+    <Compile Include="Migrations\202403211831413_ReceptionDTO.designer.cs">
+      <DependentUpon>202403211831413_ReceptionDTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Attendee.cs" />
+    <Compile Include="Models\Beer.cs" />
+    <Compile Include="Models\Brewery.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Reception.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -294,6 +358,50 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202403211800209_MenuItem.resx">
+      <DependentUpon>202403211800209_MenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211809407_Order.resx">
+      <DependentUpon>202403211809407_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211811290_Category.resx">
+      <DependentUpon>202403211811290_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211813267_Brewery.resx">
+      <DependentUpon>202403211813267_Brewery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211814364_Beer.resx">
+      <DependentUpon>202403211814364_Beer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211817342_Attendee.resx">
+      <DependentUpon>202403211817342_Attendee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211819149_Reception.resx">
+      <DependentUpon>202403211819149_Reception.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211822381_MenuItemDTO.resx">
+      <DependentUpon>202403211822381_MenuItemDTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211824447_OrderDTO.resx">
+      <DependentUpon>202403211824447_OrderDTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211826358_CategoryDTO.resx">
+      <DependentUpon>202403211826358_CategoryDTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211828232_BreweryDTO.resx">
+      <DependentUpon>202403211828232_BreweryDTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211829144_BeerDTO.resx">
+      <DependentUpon>202403211829144_BeerDTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211830243_AttendeeDTO.resx">
+      <DependentUpon>202403211830243_AttendeeDTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403211831413_ReceptionDTO.resx">
+      <DependentUpon>202403211831413_ReceptionDTO.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
