@@ -182,12 +182,16 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttendeeController.cs" />
+    <Compile Include="Controllers\AttendeeDataController.cs" />
     <Compile Include="Controllers\BeerController.cs" />
     <Compile Include="Controllers\BeerDataController.cs" />
     <Compile Include="Controllers\BreweryController.cs" />
     <Compile Include="Controllers\BreweryDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReceptionController.cs" />
+    <Compile Include="Controllers\ReceptionDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -258,7 +262,9 @@
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Reception.cs" />
+    <Compile Include="Models\ViewModels\DetailsAttendee.cs" />
     <Compile Include="Models\ViewModels\DetailsBrewery.cs" />
+    <Compile Include="Models\ViewModels\DetailsReception.cs" />
     <Compile Include="Models\ViewModels\UpdateBeer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -339,8 +345,11 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\Beers\" />
     <Folder Include="Content\Images\Breweries\" />
+    <Folder Include="Views\AttendeeData\" />
+    <Folder Include="Views\Attendee\" />
     <Folder Include="Views\Beer\" />
     <Folder Include="Views\Brewery\" />
+    <Folder Include="Views\Reception\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
