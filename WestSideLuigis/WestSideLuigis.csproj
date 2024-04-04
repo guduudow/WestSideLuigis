@@ -186,8 +186,14 @@
     <Compile Include="Controllers\BeerDataController.cs" />
     <Compile Include="Controllers\BreweryController.cs" />
     <Compile Include="Controllers\BreweryDataController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CategoryDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MenuItemDataController.cs" />
+    <Compile Include="Controllers\MenuItemController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\OrdersDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -259,6 +265,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Reception.cs" />
     <Compile Include="Models\ViewModels\DetailsBrewery.cs" />
+    <Compile Include="Models\ViewModels\DetailsMenu.cs" />
     <Compile Include="Models\ViewModels\UpdateBeer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -341,6 +348,9 @@
     <Folder Include="Content\Images\Breweries\" />
     <Folder Include="Views\Beer\" />
     <Folder Include="Views\Brewery\" />
+    <Folder Include="Views\Category\" />
+    <Folder Include="Views\MenuItem\" />
+    <Folder Include="Views\Orders\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
