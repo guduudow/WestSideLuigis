@@ -1,28 +1,24 @@
-﻿@model WestSideLuigis.Models.Brewery
+﻿﻿@model WestSideLuigis.Models.Brewery
 @{
     ViewBag.Title = "Edit";
 }
 
 <h2>Edit Brewery</h2>
 
-<form method="POST" enctype="multipart/form-data" action="/Brewery/Update/@Model.BreweryID">
-    <input type="text" style="display:none;" name="BreweryID" value="@Model.BreweryID" />
-    <div>
-        <label>Name:</label>
-        <input type="text" name="BreweryName" value="@Model.BreweryName" />
+<form action="/Brewery/Update/@Model.BreweryID" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="BreweryID" value="@Model.BreweryID" />
+    <div class="mb-3">
+        <label for="BreweryName" class="form-label">Name:</label>
+        <input type="text" class="form-control" name="BreweryName" value="@Model.BreweryName">
     </div>
-    <div>
-        <label>Location:</label>
-        <input type="text" name="BreweryLocation" value="@Model.BreweryLocation" />
+    <div class="mb-3">
+        <label for="BreweryLocation" class="form-label">Location:</label>
+        <input type="text" class="form-control" name="BreweryLocation" value="@Model.BreweryLocation">
     </div>
-    <div class="col-md-6 col-sm-12">
-        <input type="file" name="BreweryPic" />
+    <div class="mb-3">
+        <label for="BreweryPic" class="form-label">Brewery Picture:</label>
+        <input type="file" class="form-control" name="BreweryPic">
     </div>
-    <div>
-        <input type="submit" value="Update" />
-    </div>
-    <a style="color:#ab2020;" href="/Brewery/Details/@Model.BreweryID">Cancel</a>
+    <button type="submit" class="btn btn-primary" value="Update">Update</button>
+    <a href="/Brewery/Details/@Model.BreweryID" class="btn btn-warning">Cancel</a>
 </form>
-
-
-

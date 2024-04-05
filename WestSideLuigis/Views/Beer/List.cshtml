@@ -1,30 +1,35 @@
-﻿@model IEnumerable<WestSideLuigis.Models.BeerDto>
+﻿﻿@model IEnumerable<WestSideLuigis.Models.Beer>
 @{
     ViewBag.Title = "List";
 }
 
-<h2>List</h2>
+<h2>Beers</h2>
 <div>
-    <a href="/Beer/New">Add a Beer</a>
+    <a href="/Beer/New" class="btn btn-primary mb-4">Add a Beer</a>
 </div>
-@foreach (var beer in Model)
-{
-    <div class="row">
-        <div class="col-md-6 col-sm-12">
-            @{
-                string imageURL = "/Content/Images/Beers/default.jpeg";
-                if (beer.BeerHasPic)
-                {
-                    imageURL = "/Content/Images/Beers/" + beer.BeerID + "." + beer.PicExtension;
-                }
-            }
-            <div><img style="display:block; max-width:100%;" alt="@beer.BreweryName" src="@imageURL" /></div>
-            <h2><a href="/Beer/Details/@beer.BeerID">@beer.BeerName</a></h2>
-            <div>Type of Beer: @beer.BeerType</div>
-            <div>Description: @beer.BeerDescription</div>
-            <div>Alcohol Content: @beer.BeerAlcoholContent</div>
-            <div>Brewery: @beer.BreweryName</div>
-        </div>
-    </div>
 
-}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var beer in Model)
+    {
+        <div class="col">
+            <div class="card h-100" style="width: 18rem;">
+                @{
+                    string imageURL = "/Content/Images/Beers/default.jpeg";
+                    if (beer.BeerHasPic)
+                    {
+                        imageURL = "/Content/Images/Beers/" + beer.BeerID + "." + beer.PicExtension;
+                    }
+                }
+                <img src="@imageURL" class="card-img-top" alt="@beer.BreweryName">
+                <div class="card-body">
+                    <h5 class="card-title">@beer.BeerName</h5>
+                    <p class="card-text">Type of Beer: @beer.BeerType</p>
+                    <p class="card-text">Description: @beer.BeerDescription</p>
+                    <p class="card-text">Alcohol Content: @beer.BeerAlcoholContent</p>
+                    <p class="card-text">Brewery: @beer.BreweryName</p>
+                    <a href="/Beer/Details/@beer.BeerID" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

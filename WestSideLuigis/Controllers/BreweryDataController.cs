@@ -13,7 +13,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using WestSideLuigis.Models;
 
-namespace TorontoBeerDirectory.Controllers
+namespace WestSideLuigis.Controllers
 {
     public class BreweryDataController : ApiController
     {

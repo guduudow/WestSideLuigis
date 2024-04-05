@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Script.Serialization;
-using WestSideLuigis.Models.ViewModels;
+using System.Diagnostics;
 using WestSideLuigis.Models;
+using WestSideLuigis.Models.ViewModels;
+using System.Web.Script.Serialization;
+using System.Threading.Tasks;
 
 namespace WestSideLuigis.Controllers
 {
@@ -19,7 +20,7 @@ namespace WestSideLuigis.Controllers
         static BreweryController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44334/api/");
+            client.BaseAddress = new Uri("https://localhost:44393/api/");
         }
 
         /// <summary>

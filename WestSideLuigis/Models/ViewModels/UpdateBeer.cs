@@ -11,7 +11,7 @@ namespace WestSideLuigis.Models.ViewModels
 
         //the existing beer info
 
-        public BeerDto SelectedBeer { get; set; }
+        public Beer SelectedBeer { get; set; }
 
         //Need to include all breweries available when updating the beer
 

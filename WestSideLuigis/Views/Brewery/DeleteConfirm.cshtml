@@ -1,14 +1,14 @@
-﻿@model WestSideLuigis.Models.Brewery
+﻿﻿@model WestSideLuigis.Models.Brewery
 @{
     ViewBag.Title = "DeleteConfirm";
 }
 
 <h2>Are You Sure You Want To Delete This Brewery?</h2>
 
-<a href="/Brewery/List">Cancel</a>
+<a class="btn btn-warning btn-md px-4 me-md-2 fw-bold" type="button" href="/Brewery/List">Cancel</a>
 <h2>@Model.BreweryName</h2>
 <div>Location: @Model.BreweryLocation</div>
 
 <form action="/Brewery/Delete/@Model.BreweryID" method="POST">
-    <input type="submit" value="Confirm Delete" />
+    <input class="btn btn-outline-danger btn-md px-4" type="submit" value="Confirm Delete" />
 </form>
