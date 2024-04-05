@@ -8,7 +8,7 @@
 
 @foreach (var menu in Model)
 {
-    <h2><a href="/MenuItem/Details/@menu.ItemID">@menu.ItemName</a></h2>
+    <h2><a href="/MenuItem/Details/@menu.ItemID">@menu.ItemName</a> & <a href="/Beer/Details/@menu.BeerID">@menu.BeerName</a></h2>
     <div>Price: @menu.Price</div>
     <div>Category: @menu.CategoryName</div>
     <a href="/Orders/OrdersForMenuItem/@menu.ItemID"> Orders for this item</a>

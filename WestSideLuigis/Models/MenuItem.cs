@@ -24,6 +24,10 @@ namespace WestSideLuigis.Models
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
 
+        [ForeignKey("Beer")]
+        public int BeerID { get; set; }
+        public virtual Beer Beer { get; set; }
+
 
         //a menu can be in many orders
         public ICollection<Order> Orders { get; set; }
@@ -36,6 +40,8 @@ namespace WestSideLuigis.Models
         public double Price { get; set; }
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+        public int BeerID { get; set; }
+        public string BeerName { get; set; }
 
     }
 }
