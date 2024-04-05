@@ -257,6 +257,10 @@
     <Compile Include="Migrations\202403211831413_ReceptionDTO.designer.cs">
       <DependentUpon>202403211831413_ReceptionDTO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404052206549_ListBeersForMenuItems.cs" />
+    <Compile Include="Migrations\202404052206549_ListBeersForMenuItems.designer.cs">
+      <DependentUpon>202404052206549_ListBeersForMenuItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Attendee.cs" />
@@ -460,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202403211831413_ReceptionDTO.resx">
       <DependentUpon>202403211831413_ReceptionDTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404052206549_ListBeersForMenuItems.resx">
+      <DependentUpon>202404052206549_ListBeersForMenuItems.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

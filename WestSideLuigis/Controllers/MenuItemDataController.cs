@@ -36,7 +36,9 @@ namespace WestSideLuigis.Controllers
                 ItemName = b.ItemName,
                 ItemDescription = b.ItemDescription,
                 Price = b.Price,
-                CategoryName = b.Category.CategoryName
+                CategoryName = b.Category.CategoryName,
+                BeerID = b.Beer.BeerID,
+                BeerName = b.Beer.BeerName
             }
             ));
 
@@ -61,7 +63,9 @@ namespace WestSideLuigis.Controllers
                 ItemName = MenuItem.ItemName,
                 ItemDescription = MenuItem.ItemDescription,
                 Price = MenuItem.Price,
-                CategoryName = MenuItem.Category.CategoryName
+                CategoryName = MenuItem.Category.CategoryName,
+                BeerID = MenuItem.Beer.BeerID,
+                BeerName = MenuItem.Beer.BeerName
             };
             if (MenuItem == null)
             {
