@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WestSideLuigis.Models.OrderDto>
+@{
+    ViewBag.Title = "ListOrdersForMenuItem";
+}
+
+<h2>List of Orders for Menu Item</h2>
+
+<table class="table">
+    <tr>
+        <th>Order ID</th>
+        <th>Table No</th>
+        <th>Order Date</th>
+        <th>Order Status</th>
+    </tr>
+    @foreach (var order in Model)
+    {
+        <tr>
+            <td>@order.OrderId</td>
+            <td>@order.TableNo</td>
+            <td>@order.OrderDate</td>
+            <td>@order.OrderStatus</td>
+        </tr>
+    }
+</table>
+

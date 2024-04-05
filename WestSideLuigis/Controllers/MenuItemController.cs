@@ -22,7 +22,7 @@ namespace WestSideLuigis.Controllers
         static MenuItemController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44361/api/menuitemdata/");
+            client.BaseAddress = new Uri("https://localhost:44334/api/menuitemdata/");
         }
 
         // GET: Menu/List

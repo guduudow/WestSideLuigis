@@ -20,7 +20,7 @@ namespace WestSideLuigis.Controllers
         static CategoryController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44361/api/categorydata/");
+            client.BaseAddress = new Uri("https://localhost:44334/api/categorydata/");
         }
 
         // GET: Category/List

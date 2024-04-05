@@ -1,0 +1,41 @@
+﻿@model WestSideLuigis.Models.ReceptionDto
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create an Event</h2>
+
+<form action="/Reception/Create" method="POST">
+    <div>
+        <label>Name of Event:</label>
+        <input name="ReceptionName" type="text" />
+    </div>
+    <div>
+        <label>Location of Event:</label>
+        <input name="ReceptionLocation" type="text" />
+    </div>
+    <div>
+        <label>Date of Event:</label>
+        <input name="ReceptionDate" type="text" />
+    </div>
+    <div>
+        <label>Start Time of Event:</label>
+        <input name="StartTime" type="text" />
+    </div>
+    <div>
+        <label>End Time of Event:</label>
+        <input name="EndTime" type="text" />
+    </div>
+    <div>
+        <label>Cost of Event:</label>
+        <input name="ReceptionPrice" type="text" />
+    </div>
+    <div>
+        <label>Description of Event:</label>
+        <textarea name="ReceptionDescription"></textarea>
+    </div>
+
+    <div>
+        <input type="submit" value="Add Reception" />
+    </div>
+</form>

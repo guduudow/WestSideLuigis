@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+<a href="/MenuItem/List">Go back to list</a>
+<h2>Create Menu</h2>
+
+<form action="/MenuItem/Create" method="POST">
+
+    <div>
+        <label>Name:</label><input name="ItemName" />
+    </div>
+    <div>
+        <label>Price($):</label><input name="Price" />
+    </div>
+    <div>
+        <label>Description:</label><input name="ItemDescription" />
+    </div>
+    <div>
+        <label>CategoryID:</label><input name="CategoryID" />
+    </div>
+    <div>
+        <input type="submit" value="Add Menu" />
+    </div>
+</form>

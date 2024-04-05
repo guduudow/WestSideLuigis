@@ -1,0 +1,34 @@
+﻿@model WestSideLuigis.Models.ViewModels.DetailsMenu
+
+<a href="/MenuItem/List">Go back to list</a>
+
+<h2>Edit Menu Item</h2>
+
+<form action="/MenuItem/Update/@Model.selectedmenu.ItemID" method="POST">
+
+    <div>
+        <label>ID:</label>
+        <input name="ItemID" value="@Model.selectedmenu.ItemID" />
+    </div>
+    <div>
+        <label>Name:</label>
+        <input name="ItemName" value="@Model.selectedmenu.ItemName" />
+    </div>
+    <div>
+        <label>Price($):</label>
+        <input name="Price" value="@Model.selectedmenu.Price" />
+    </div>
+    <div>
+        <label>Description:</label>
+        <input name="ItemDescription" value="@Model.selectedmenu.ItemDescription" />
+    </div>
+    <div>
+        <label>CategoryId:</label>
+        <input name="CategoryId" value="1" />
+    </div>
+    <div>
+        <input type="submit" value="Update" />
+    </div>
+</form>
+<script>console.log(@Model.selectedmenu.CategoryId)</script>
+

@@ -1,0 +1,35 @@
+﻿@model WestSideLuigis.Models.AttendeeDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update an Attendee</h2>
+
+<a href="/Attendee/List">Go Back</a>
+
+<form action="/Attendee/Update/@Model.AttendeeID" method="POST">
+    <div>
+        <input type="text" style="display:none;" name="AttendeeId" value="@Model.AttendeeID" />
+    </div>
+    <div>
+        <label>First Name: </label>
+        <input name="FirstName" type="text" value="@Model.FirstName" />
+    </div>
+    <div>
+        <label>Last Name: </label>
+        <input name="LastName" type="text" value="@Model.LastName" />
+    </div>
+    <div>
+        <label>Email: </label>
+        <input name="Email" type="email" value="@Model.Email" />
+    </div>
+    <div>
+        <label>Phone Number: </label>
+        <input name="PhoneNumber" type="text" value="@Model.PhoneNumber" />
+    </div>
+
+    <div>
+        <input type="submit" value="Update Attendee" />
+    </div>
+</form>
+

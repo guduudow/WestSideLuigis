@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WestSideLuigis.Models.OrderDto>
+
+<h2>List of Orders</h2>
+
+<table class="table">
+    <tr>
+        <th>Table No</th>
+        <th>Order Date</th>
+        <th>Order Status</th>
+    </tr>
+    @foreach (var order in Model)
+    {
+        <tr>
+            <td><a href="/Orders/MenuItemsForOrder/@order.OrderId">@order.TableNo</a></td>
+            <td>@order.OrderDate</td>
+            <td>@order.OrderStatus</td>
+
+        </tr>
+    }
+</table>

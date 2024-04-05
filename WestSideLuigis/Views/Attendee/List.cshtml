@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WestSideLuigis.Models.AttendeeDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<a class="btn btn-warning" href="/Attendee/New">Add an Attendee</a>
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var attendee in Model)
+        {
+
+            <div class="card px-3 mx-3 my-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h2><a href="/Attendee/View/@attendee.AttendeeID">@attendee.FirstName @attendee.LastName</a></h2>
+                    <p>Email: @attendee.Email</p>
+                    <p>Phone Number: @attendee.PhoneNumber</p>
+                </div>
+            </div>
+
+
+
+        }
+    </div>
+</div>

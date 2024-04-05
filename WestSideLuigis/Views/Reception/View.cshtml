@@ -1,0 +1,113 @@
+﻿@model WestSideLuigis.Models.ViewModels.DetailsReception
+@{
+    ViewBag.Title = "View";
+}
+
+
+
+
+
+<h2>About the Reception</h2>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb" class="bg-dark rounded-3 p-3 mb-4">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="#">Reception</a></li>
+                    <li class="breadcrumb-item"><a href="/Reception/List">List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@Model.SelectedReception.ReceptionName</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <a href="/Reception/List">Back to the List</a>
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <h5 class="my-3">@Model.SelectedReception.ReceptionName</h5>
+                    <p class="text-muted mb-1">Reception</p>
+                    <p class="text-muted mb-4"></p>
+                    <div class="d-flex justify-content-center mb-2">
+                        <a class="btn btn-secondary mx-2" href="/Reception/Edit/@Model.SelectedReception.ReceptionID">Edit</a>
+                        <a class="btn btn-danger mx-2" href="/Reception/DeleteConfirm/@Model.SelectedReception.ReceptionID">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Description</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@Model.SelectedReception.ReceptionDescription</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Start Time:</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@Model.SelectedReception.StartTime.ToShortTimeString()</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">End:</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@Model.SelectedReception.EndTime.ToShortTimeString()</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Date: @Model.SelectedReception.ReceptionDate.ToShortDateString()</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">Location: @Model.SelectedReception.ReceptionLocation</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Price:</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0"> @Model.SelectedReception.ReceptionPrice</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <h3>Attendees:</h3>
+                @foreach (var attendee in Model.RegAttendees)
+                {
+                    <a href="/Attendee/View/@attendee.AttendeeID">@attendee.FirstName @attendee.LastName </a><a href="/Reception/Remove/@Model.SelectedReception.ReceptionID?AttendeeID=@attendee.AttendeeID" style="color: red;">[x]</a><hr />
+                }
+            </div>
+
+            <div>
+                <h4>Add New Attendees to Reception: </h4>
+                <form method="POST" action="/Reception/Add/@Model.SelectedReception.ReceptionID">
+                    <select name="AttendeeID">
+                        @foreach (var attendee in Model.PotenialAttendees)
+                        {
+                            <option value="@attendee.AttendeeID">@attendee.FirstName @attendee.LastName</option>
+                        }
+                    </select>
+                    <input type="submit" value="Add Attendee" style="margin-top: 10px; margin-bottom: 10px;" />
+                </form>
+
+
+
+            </div>
+

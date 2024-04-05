@@ -1,0 +1,12 @@
+﻿@model WestSideLuigis.Models.AttendeeDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to remove this attendee?</h2>
+<a href="/Attendee/List">Cancel</a>
+<h3>Name: @Model.FirstName @Model.LastName</h3>
+<form action="/Attendee/Delete/@Model.AttendeeID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>
+

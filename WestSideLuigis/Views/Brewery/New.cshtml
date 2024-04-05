@@ -1,0 +1,17 @@
+﻿﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Create Brewery</h2>
+<form action="/Brewery/Create" method="POST">
+    <div class="mb-3">
+        <label for="BreweryName" class="form-label">Brewery Name:</label>
+        <input type="text" class="form-control" name="BreweryName" aria-describedby="brewery name">
+    </div>
+    <div class="mb-3">
+        <label for="BreweryLocation" class="form-label">Location:</label>
+        <input type="text" class="form-control" name="BreweryLocation">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Brewery</button>
+</form>

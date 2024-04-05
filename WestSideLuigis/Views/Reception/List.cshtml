@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WestSideLuigis.Models.ReceptionDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<a class="btn btn-warning" href="/Reception/New">Add a Reception</a>
+
+
+<div class="container">
+    <div class="row">
+
+
+
+        @foreach (var Reception in Model)
+        {
+
+            <div class="col-lg-4">
+                <div class="card card-margin">
+                    <div class="card-header no-border">
+                        <h5 class="card-title">
+                            @Reception.ReceptionName
+                        </h5>
+                    </div>
+                    <div class="card-body pt-0 my-3">
+                        <div class="widget-49">
+                            <div class="widget-49-title-wrapper">
+                                <div class="widget-49-date-primary">
+                                    <span class="widget-49-address">Location: @Reception.ReceptionLocation</span>
+
+                                </div>
+                                <div class="widget-49-date-info">
+                                    <span class="widget-49-pro-title">Date: @Reception.ReceptionDate.ToShortDateString()</span>
+                                </div>
+                                <div class="widge-49-start-info">
+                                    <span class="widget-49-pro-date">Start Time: @Reception.StartTime.ToShortTimeString()</span>
+                                </div>
+                                <div class="widge-49-end-info">
+                                    <span class="widget-49-pro-date">End Time: @Reception.EndTime.ToShortTimeString()</span>
+                                </div>
+                                <div class="widget-49-price-info">
+                                    <span class="widget-49-pro-price">Price (CDN): @Reception.ReceptionPrice</span>
+                                </div>
+                            </div>
+                            <div class="widget-49-meeting-desc">
+                                <p>@Reception.ReceptionDescription</p>
+                            </div>
+                            <div class="widget-49-meeting-action">
+                                <a href="/Reception/View/@Reception.ReceptionID" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

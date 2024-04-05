@@ -1,0 +1,85 @@
+﻿@model WestSideLuigis.Models.ViewModels.DetailsAttendee
+@{
+    ViewBag.Title = "View";
+}
+
+<h1>Show Attendee</h1>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="#">Attendee</a></li>
+                    <li class="breadcrumb-item"><a href="/Attendee/List">List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@Model.SelectedAttendee.FirstName @Model.SelectedAttendee.LastName</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <a href="/Attendee/List">Back to the List</a>
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <img src="https://christopherscottedwards.com/wp-content/uploads/2018/07/Generic-Profile.jpg" alt="avatar"
+                         class="rounded-circle img-fluid" style="height:120px; width: 130px;">
+                    <h5 class="my-3">@Model.SelectedAttendee.FirstName @Model.SelectedAttendee.LastName</h5>
+                    <p class="text-muted mb-1">Attendee</p>
+                    <p class="text-muted mb-4"></p>
+                    <div class="d-flex justify-content-center mb-2">
+                        <a class="btn btn-secondary mx-2" href="/Attendee/Edit/@Model.SelectedAttendee.AttendeeID">Edit</a>
+                        <a class="btn btn-danger mx-2" href="/Attendee/DeleteConfirm/@Model.SelectedAttendee.AttendeeID">Delete</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4 mb-lg-0">
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush rounded-3">
+                        <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                            <i class="fas fa-globe fa-lg text-warning"></i>
+                            <h4>Receptions Signed Up For: </h4>
+                            @foreach (var reception in Model.RegEvents)
+                            {
+                                <a href="/Reception/View/@reception.ReceptionID">@reception.ReceptionName </a><br />
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Full Name</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@Model.SelectedAttendee.FirstName @Model.SelectedAttendee.LastName</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Email</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@Model.SelectedAttendee.Email</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Phone</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">@Model.SelectedAttendee.PhoneNumber</p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+

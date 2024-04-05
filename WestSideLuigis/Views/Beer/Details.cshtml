@@ -1,0 +1,24 @@
+﻿﻿@model WestSideLuigis.Models.ViewModels.UpdateBeer
+@{
+    ViewBag.Title = "View";
+}
+<div class="card mb-3 justify-content-center align-items-center">
+    @{
+        string imageURL = "/Content/Images/Beers/default.jpeg";
+        if (Model.SelectedBeer.BeerHasPic)
+        {
+            imageURL = "/Content/Images/Beers/" + Model.SelectedBeer.BeerID + "." + Model.SelectedBeer.PicExtension;
+        }
+    }
+    <img style="display:block; height:100%; width:400px;" alt="@Model.SelectedBeer.BeerName" src="@imageURL" />
+    <div class="card-body">
+        <h5 class="card-title">@Model.SelectedBeer.BeerName</h5>
+        <p class="card-text"> Brewery: @Model.SelectedBeer.BreweryName</p>
+        <p class="card-text"> Beer Type: @Model.SelectedBeer.BeerType</p>
+        <p class="card-text"> Alcohol Content: @Model.SelectedBeer.BeerAlcoholContent</p>
+        <p class="card-text"> Beer Description: @Model.SelectedBeer.BeerDescription</p>
+        <a href="/Beer/List" class="btn btn-primary btn-md px-4 me-md-2 fw-bold" type="button">Go back to list</a>
+        <a href="/Beer/Edit/@Model.SelectedBeer.BeerID" class="btn btn-warning btn-md px-4 me-md-2 fw-bold" type="button">Update</a>
+        <a href="/Beer/DeleteConfirm/@Model.SelectedBeer.BeerID" class="btn btn-outline-danger btn-md px-4" type="button">Delete</a>
+    </div>
+</div>

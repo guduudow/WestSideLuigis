@@ -1,0 +1,29 @@
+﻿@model WestSideLuigis.Models.AttendeeDto
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add an Attendee</h2>
+<form action="/Attendee/Create" method="POST">
+    <div>
+        <label>First Name: </label>
+        <input name="FirstName" type="text" />
+    </div>
+    <div>
+        <label>Last Name: </label>
+        <input name="LastName" type="text" />
+    </div>
+    <div>
+        <label>Email: </label>
+        <input name="Email" type="email" />
+    </div>
+    <div>
+        <label>Phone Number: </label>
+        <input name="PhoneNumber" type="text" />
+    </div>
+
+    <div>
+        <input type="submit" value="Add Attendee" />
+    </div>
+</form>
+

@@ -1,0 +1,44 @@
+﻿﻿@model WestSideLuigis.Models.ViewModels.UpdateBeer
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Beer</h2>
+<form action="/Beer/Update/@Model.SelectedBeer.BeerID" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="BeerID" value="@Model.SelectedBeer.BeerID" />
+    <div class="mb-3">
+        <label for="BeerName" class="form-label">Beer Name:</label>
+        <input type="text" class="form-control" name="BeerName" value="@Model.SelectedBeer.BeerName">
+    </div>
+    <div class="mb-3">
+        <label for="BreweryName" class="form-label">Brewery Name:</label>
+        <input type="text" class="form-control" name="BreweryName" value="@Model.SelectedBeer.BreweryName">
+    </div>
+    <div class="mb-3">
+        <label for="BeerType" class="form-label">Beer Type:</label>
+        <input type="text" class="form-control" name="BeerType" value="@Model.SelectedBeer.BeerType">
+    </div>
+    <div class="mb-3">
+        <label for="BeerDescription" class="form-label">Description:</label>
+        <textarea class="form-control" name="BeerDescription" rows="3">@Model.SelectedBeer.BeerDescription</textarea>
+    </div>
+    <div class="mb-3">
+        <label for="BeerAlcoholContent" class="form-label">Alcohol Content:</label>
+        <input type="text" class="form-control" name="BeerAlcoholContent" value="@Model.SelectedBeer.BeerAlcoholContent">
+    </div>
+    <div class="mb-3">
+        <label for="BreweryID" class="form-label">Brewery ID:</label>
+        <select class="form-select" name="BreweryID">
+            @foreach (var brewery in Model.BreweryOptions)
+            {
+                <option value="@brewery.BreweryID">@brewery.BreweryName</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="BeerPic" class="form-label">Beer Picture:</label>
+        <input type="file" class="form-control" name="BeerPic">
+    </div>
+    <button type="submit" class="btn btn-primary" value="Update">Update</button>
+    <a href="/Beer/Details/@Model.SelectedBeer.BeerID" class="btn btn-warning">Cancel</a>
+</form>

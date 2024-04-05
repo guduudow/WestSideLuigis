@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WestSideLuigis.Models.MenuItemDto>
+@{
+    ViewBag.Title = "Details";
+}
+<h2>List of Menu Items for Order</h2>
+
+<table class="table">
+    <tr>
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+    </tr>
+    @foreach (var menuItem in Model)
+    {
+        <tr>
+            <td>@menuItem.ItemID</td>
+            <td>@menuItem.ItemName</td>
+            <td>@menuItem.ItemDescription</td>
+            <td>@menuItem.Price</td>
+            <td>@menuItem.CategoryName</td>
+        </tr>
+    }
+</table>

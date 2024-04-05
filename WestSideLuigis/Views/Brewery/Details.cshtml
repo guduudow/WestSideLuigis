@@ -1,0 +1,45 @@
+﻿﻿@model WestSideLuigis.Models.ViewModels.DetailsBrewery
+@{
+    ViewBag.Title = "View";
+}
+
+<div class="card mb-3 justify-content-center align-items-center">
+    @{
+        string imageURL = "/Content/Images/Breweries/default.jpeg";
+        if (Model.SelectedBrewery.BreweryHasPic)
+        {
+            imageURL = "/Content/Images/Breweries/" + Model.SelectedBrewery.BreweryID + "." + Model.SelectedBrewery.PicExtension;
+        }
+    }
+    <img style="display:block; height:100%; width:400px;" alt="@Model.SelectedBrewery.BreweryName" src="@imageURL" />
+    <div class="card-body">
+        <h5 class="card-title">@Model.SelectedBrewery.BreweryName</h5>
+        <p class="card-text"> Brewery Location: @Model.SelectedBrewery.BreweryLocation</p>
+        <a href="/Brewery/List" class="btn btn-primary btn-md px-4 me-md-2 fw-bold" type="button">Go back to list</a>
+        <a href="/Brewery/Edit/@Model.SelectedBrewery.BreweryID" class="btn btn-warning btn-md px-4 me-md-2 fw-bold" type="button">Update</a>
+        <a href="/Brewery/DeleteConfirm/@Model.SelectedBrewery.BreweryID" class="btn btn-outline-danger btn-md px-4" type="button">Delete</a>
+    </div>
+</div>
+
+
+
+
+<div style="margin-top: 100px;">
+    <h3 class="text-center">Beers Related to this brewery</h3>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var beer in Model.RelatedBeers)
+        {
+            <div class="col">
+                <div class="card text-center mb-3 h-100" style="width: 18rem;">
+
+                    <div class="card-body">
+                        <h5 class="card-title">@beer.BeerName</h5>
+                        <p class="card-text">@beer.BeerDescription</p>
+                        <a href="/Beer/Details/@beer.BeerID" class="btn btn-primary">Check It Out</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
