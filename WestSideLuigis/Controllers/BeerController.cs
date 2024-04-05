@@ -36,7 +36,7 @@ namespace WestSideLuigis.Controllers
         public ActionResult List()
         {
             //goal is to communicate with beer api to retrieve a list of beers
-            //curl https://localhost:44393/api/beerdata/listbeers
+            //curl https://localhost:44334/api/beerdata/listbeers
 
             string url = "beerdata/listbeers";
             HttpResponseMessage response = client.GetAsync(url).Result;
@@ -44,7 +44,7 @@ namespace WestSideLuigis.Controllers
             //Debug.WriteLine("The response code is: ");
             //Debug.WriteLine(response.StatusCode);
 
-            IEnumerable<BeerDto> beers = response.Content.ReadAsAsync<IEnumerable<BeerDto>>().Result;
+            IEnumerable<Beer> beers = response.Content.ReadAsAsync<IEnumerable<Beer>>().Result;
 
             //Debug.WriteLine("Number of beers received: ");
             //Debug.WriteLine(beers.Count());
@@ -77,7 +77,7 @@ namespace WestSideLuigis.Controllers
             //Debug.WriteLine("The response code is: ");
             //Debug.WriteLine(response.StatusCode);
 
-            BeerDto SelectedBeer = response.Content.ReadAsAsync<BeerDto>().Result;
+            Beer SelectedBeer = response.Content.ReadAsAsync<Beer>().Result;
 
             ViewModel.SelectedBeer = SelectedBeer;
             //Debug.WriteLine("Beer recieved: ");
@@ -185,7 +185,7 @@ namespace WestSideLuigis.Controllers
             //the existing beer info
             string url = "beerdata/findbeer/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
-            BeerDto SelectedBeer = response.Content.ReadAsAsync<BeerDto>().Result;
+            Beer SelectedBeer = response.Content.ReadAsAsync<Beer>().Result;
             ViewModel.SelectedBeer = SelectedBeer;
 
             //Need to include all breweries available when updating the beer

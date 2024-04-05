@@ -20,7 +20,7 @@ namespace WestSideLuigis.Controllers
         static BreweryController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44393/api/");
+            client.BaseAddress = new Uri("https://localhost:44334/api/");
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace WestSideLuigis.Controllers
         public ActionResult List()
         {
             //goal is to communicate with brewery api to retrieve a list of breweries
-            //curl https://localhost:44393/api/brewerydata/listbreweries
+            //curl https://localhost:44334/api/brewerydata/listbreweries
 
             string url = "brewerydata/listbreweries";
             HttpResponseMessage response = client.GetAsync(url).Result;
