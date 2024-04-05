@@ -16,6 +16,7 @@ namespace WestSideLuigis.Models
         public string OrderStatus { get; set; }
         //An order can have many menu items
         public ICollection<MenuItem> MenuItems { get; set; }
+        //We planned on adding BeerID, ItemID and AttendeeID to display for each order but ran into migration problems related to "FOREIGN KEY constraint 'FK_dbo.Orders_dbo.Beers_BeerID' on table 'Orders' may cause cycles or multiple cascade paths. Specify ON DELETE NO ACTION or ON UPDATE NO ACTION, or modify other FOREIGN KEY constraints." 
     }
     public class OrderDto
     {

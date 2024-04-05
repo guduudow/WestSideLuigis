@@ -20,6 +20,8 @@ namespace WestSideLuigis.Controllers
             client.BaseAddress = new Uri("https://localhost:44334/api/orderdata/");
         }
 
+
+        //This is where we would use the List method in the Orders Controller to get the information about specific beer, food, and attendee which would be returned in the Orders view, BUT the migration didnt work
         //GET: Orders/List
         public ActionResult List()
         {
