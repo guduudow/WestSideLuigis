@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WestSideLuigis.Models.BreweryDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Breweries</h2>
+<div>
+    <a href="/Brewery/New" class="btn btn-primary mb-4">Add a Brewery</a>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var brewery in Model)
+    {
+        <div class="col">
+            <div class="card h-100" style="width: 18rem;">
+                @{
+                    string imageURL = "/Content/Images/Breweries/default.jpeg";
+                    if (brewery.BreweryHasPic)
+                    {
+                        imageURL = "/Content/Images/Breweries/" + brewery.BreweryID + "." + brewery.PicExtension;
+                    }
+                }
+                <img src="@imageURL" class="card-img-top" alt="@brewery.BreweryName">
+                <div class="card-body">
+                    <h5 class="card-title">@brewery.BreweryName</h5>
+                    <p class="card-text">Location: @brewery.BreweryLocation</p>
+                    <a href="/Brewery/Details/@brewery.BreweryID" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

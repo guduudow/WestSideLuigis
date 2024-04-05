@@ -1,0 +1,15 @@
+﻿@model WestSideLuigis.Models.ViewModels.DetailsMenu
+@{
+    ViewBag.Title = "Details";
+}
+
+<a href="/MenuItem/List">Go back to list</a>
+<div><a href="/Menu/Edit/@Model.selectedmenu.ItemID">Update Item</a></div>
+<div><a style="color:#ab2020;" href="/Menu/DeleteConfirm/@Model.selectedmenu.ItemID">Delete Item</a></div>
+
+<h2>@Model.selectedmenu.ItemName</h2>
+<div>@Model.selectedmenu.ItemDescription</div>
+<div>@Model.selectedmenu.Price</div>
+<div>@Model.selectedmenu.CategoryName</div>
+
+

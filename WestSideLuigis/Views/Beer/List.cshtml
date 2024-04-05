@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WestSideLuigis.Models.BeerDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<div>
+    <a href="/Beer/New">Add a Beer</a>
+</div>
+@foreach (var beer in Model)
+{
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            @{
+                string imageURL = "/Content/Images/Beers/default.jpeg";
+                if (beer.BeerHasPic)
+                {
+                    imageURL = "/Content/Images/Beers/" + beer.BeerID + "." + beer.PicExtension;
+                }
+            }
+            <div><img style="display:block; max-width:100%;" alt="@beer.BreweryName" src="@imageURL" /></div>
+            <h2><a href="/Beer/Details/@beer.BeerID">@beer.BeerName</a></h2>
+            <div>Type of Beer: @beer.BeerType</div>
+            <div>Description: @beer.BeerDescription</div>
+            <div>Alcohol Content: @beer.BeerAlcoholContent</div>
+            <div>Brewery: @beer.BreweryName</div>
+        </div>
+    </div>
+
+}

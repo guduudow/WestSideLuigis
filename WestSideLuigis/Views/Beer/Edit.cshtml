@@ -1,0 +1,51 @@
+﻿@model WestSideLuigis.Models.ViewModels.UpdateBeer
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Beer</h2>
+
+<form method="POST" enctype="multipart/form-data" action="/Beer/Update/@Model.SelectedBeer.BeerID">
+    <input type="text" style="display:none;" name="BeerID" value="@Model.SelectedBeer.BeerID" />
+    <div>
+        <label>Beer Name:</label>
+        <input type="text" name="BeerName" value="@Model.SelectedBeer.BeerName" />
+    </div>
+    <div>
+        <label>Brewery Name:</label>
+        <input type="text" name="BreweryName" value="@Model.SelectedBeer.BreweryName" />
+    </div>
+    <div>
+        <label>Beer Type:</label>
+        <input type="text" name="BeerType" value="@Model.SelectedBeer.BeerType" />
+    </div>
+    <div>
+        <label>Description:</label>
+        <input type="text" name="BeerDescription" value="@Model.SelectedBeer.BeerDescription" />
+    </div>
+    <div>
+        <label>Alcohol Content:</label>
+        <input type="text" name="BeerAlcoholContent" value="@Model.SelectedBeer.BeerAlcoholContent" />
+    </div>
+    <div>
+        <label>Brewery ID:</label>
+        <select name="BreweryID">
+            @foreach (var brewery in Model.BreweryOptions)
+            {
+                <option value="@brewery.BreweryID">@brewery.BreweryName</option>
+
+            }
+        </select>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <input type="file" name="BeerPic" />
+    </div>
+    <div>
+        <input type="submit" value="Update" />
+    </div>
+    <a style="color:#ab2020;" href="/Beer/Details/@Model.SelectedBeer.BeerID">Cancel</a>
+
+</form>
+
+
+

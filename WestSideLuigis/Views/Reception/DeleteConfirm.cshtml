@@ -1,0 +1,12 @@
+﻿@model WestSideLuigis.Models.ReceptionDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this reception?</h2>
+<a href="/Reception/List">Cancel</a>
+<h3>Name: @Model.ReceptionName</h3>
+<form action="/Reception/Delete/@Model.ReceptionID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>
+

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WestSideLuigis.Models.BreweryDto>
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Create Beer</h2>
+<form action="/Beer/Create" method="POST">
+    <div>
+        <label>Name:</label><input type="text" name="BeerName" />
+    </div>
+    <div>
+        <label>Type:</label><input type="text" name="BeerType" />
+    </div>
+    <div>
+        <label>Description:</label><input type="text" name="BeerDescription" />
+    </div>
+    <div>
+        <label>Alcohol Content:</label><input type="text" name="BeerAlcoholContent" />
+    </div>
+    <div>
+        <label>Brewery:</label>
+        <select name="BreweryID">
+            @foreach (var brewery in Model)
+            {
+                <option value="@brewery.BreweryID">@brewery.BreweryName</option>
+
+            }
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Add Beer" />
+    </div>
+</form>
+

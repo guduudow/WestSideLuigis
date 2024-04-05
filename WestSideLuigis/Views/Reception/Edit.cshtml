@@ -1,0 +1,46 @@
+﻿@model WestSideLuigis.Models.ReceptionDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit a Reception</h2>
+
+<a href="/Reception/List">Go Back</a>
+
+<form action="/Reception/Update/@Model.ReceptionID" method="POST">
+    <div>
+        <input type="text" style="display:none;" name="ReceptionId" value="@Model.ReceptionID" />
+    </div>
+    <div>
+        <label>Name of Event:</label>
+        <input name="ReceptionName" type="text" value="@Model.ReceptionName" />
+    </div>
+    <div>
+        <label>Location of Event:</label>
+        <input name="ReceptionLocation" type="text" value="@Model.ReceptionLocation" />
+    </div>
+    <div>
+        <label>Date of Event:</label>
+        <input name="ReceptionDate" type="text" value="@Model.ReceptionDate" />
+    </div>
+    <div>
+        <label>Start Time of Event:</label>
+        <input name="StartTime" type="text" value="@Model.StartTime" />
+    </div>
+    <div>
+        <label>End Time of Event:</label>
+        <input name="EndTime" type="text" value="@Model.EndTime" />
+    </div>
+    <div>
+        <label>Cost of Event:</label>
+        <input name="ReceptionPrice" type="text" value="@Model.ReceptionPrice" />
+    </div>
+    <div>
+        <label>Description of Event:</label>
+        <input name="ReceptionDescription" type="text" value="@Model.ReceptionDescription" />
+    </div>
+
+    <div>
+        <input type="submit" value="Update Reception" />
+    </div>
+</form>

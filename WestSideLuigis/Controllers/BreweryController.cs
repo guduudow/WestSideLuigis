@@ -19,7 +19,7 @@ namespace WestSideLuigis.Controllers
         static BreweryController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44393/api/");
+            client.BaseAddress = new Uri("https://localhost:44334/api/");
         }
 
         /// <summary>

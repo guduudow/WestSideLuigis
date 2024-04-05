@@ -182,6 +182,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttendeeController.cs" />
+    <Compile Include="Controllers\AttendeeDataController.cs" />
     <Compile Include="Controllers\BeerController.cs" />
     <Compile Include="Controllers\BeerDataController.cs" />
     <Compile Include="Controllers\BreweryController.cs" />
@@ -194,6 +196,8 @@
     <Compile Include="Controllers\MenuItemController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\OrdersDataController.cs" />
+    <Compile Include="Controllers\ReceptionController.cs" />
+    <Compile Include="Controllers\ReceptionDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -264,8 +268,10 @@
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Reception.cs" />
+    <Compile Include="Models\ViewModels\DetailsAttendee.cs" />
     <Compile Include="Models\ViewModels\DetailsBrewery.cs" />
     <Compile Include="Models\ViewModels\DetailsMenu.cs" />
+    <Compile Include="Models\ViewModels\DetailsReception.cs" />
     <Compile Include="Models\ViewModels\UpdateBeer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -341,16 +347,49 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Beer\List.cshtml" />
+    <Content Include="Views\Beer\Details.cshtml" />
+    <Content Include="Views\Beer\DeleteConfirm.cshtml" />
+    <Content Include="Views\Beer\Edit.cshtml" />
+    <Content Include="Views\Beer\Error.cshtml" />
+    <Content Include="Views\Beer\New.cshtml" />
+    <Content Include="Views\Brewery\DeleteConfirm.cshtml" />
+    <Content Include="Views\Brewery\Details.cshtml" />
+    <Content Include="Views\Brewery\Edit.cshtml" />
+    <Content Include="Views\Brewery\Error.cshtml" />
+    <Content Include="Views\Brewery\List.cshtml" />
+    <Content Include="Views\Brewery\New.cshtml" />
+    <Content Include="Views\MenuItem\DeleteConfirm.cshtml" />
+    <Content Include="Views\MenuItem\Details.cshtml" />
+    <Content Include="Views\MenuItem\Edit.cshtml" />
+    <Content Include="Views\MenuItem\Error.cshtml" />
+    <Content Include="Views\MenuItem\List.cshtml" />
+    <Content Include="Views\MenuItem\New.cshtml" />
+    <Content Include="Views\Orders\AddMenuItemToOrder.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Error.cshtml" />
+    <Content Include="Views\Orders\List.cshtml" />
+    <Content Include="Views\Orders\ListOrdersForMenuItem.cshtml" />
+    <Content Include="Views\Orders\MenuItemsForOrder.cshtml" />
+    <Content Include="Views\Orders\OrdersForMenuItem.cshtml" />
+    <Content Include="Views\Attendee\DeleteConfirm.cshtml" />
+    <Content Include="Views\Attendee\Edit.cshtml" />
+    <Content Include="Views\Attendee\Errors.cshtml" />
+    <Content Include="Views\Attendee\List.cshtml" />
+    <Content Include="Views\Attendee\New.cshtml" />
+    <Content Include="Views\Attendee\View.cshtml" />
+    <Content Include="Views\Reception\DeleteConfirm.cshtml" />
+    <Content Include="Views\Reception\Edit.cshtml" />
+    <Content Include="Views\Reception\Errors.cshtml" />
+    <Content Include="Views\Reception\List.cshtml" />
+    <Content Include="Views\Reception\New.cshtml" />
+    <Content Include="Views\Reception\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\Beers\" />
     <Folder Include="Content\Images\Breweries\" />
-    <Folder Include="Views\Beer\" />
-    <Folder Include="Views\Brewery\" />
     <Folder Include="Views\Category\" />
-    <Folder Include="Views\MenuItem\" />
-    <Folder Include="Views\Orders\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

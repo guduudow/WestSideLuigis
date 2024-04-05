@@ -1,0 +1,28 @@
+﻿@model WestSideLuigis.Models.Brewery
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Brewery</h2>
+
+<form method="POST" enctype="multipart/form-data" action="/Brewery/Update/@Model.BreweryID">
+    <input type="text" style="display:none;" name="BreweryID" value="@Model.BreweryID" />
+    <div>
+        <label>Name:</label>
+        <input type="text" name="BreweryName" value="@Model.BreweryName" />
+    </div>
+    <div>
+        <label>Location:</label>
+        <input type="text" name="BreweryLocation" value="@Model.BreweryLocation" />
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <input type="file" name="BreweryPic" />
+    </div>
+    <div>
+        <input type="submit" value="Update" />
+    </div>
+    <a style="color:#ab2020;" href="/Brewery/Details/@Model.BreweryID">Cancel</a>
+</form>
+
+
+
