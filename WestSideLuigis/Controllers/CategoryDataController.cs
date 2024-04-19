@@ -13,6 +13,7 @@ using WestSideLuigis.Models;
 using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
 using RouteAttribute = System.Web.Http.RouteAttribute;
 using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
+using AuthorizeAttribute = System.Web.Http.AuthorizeAttribute;
 
 namespace WestSideLuigis.Controllers
 {
@@ -74,6 +75,8 @@ namespace WestSideLuigis.Controllers
         /// <returns>An IHttpActionResult containing the added category.</returns>
         [ResponseType(typeof(Category))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult AddCategory(Category Category)
         {
             if (!ModelState.IsValid)
@@ -95,6 +98,8 @@ namespace WestSideLuigis.Controllers
         /// <returns>An IHttpActionResult indicating success or failure.</returns>
         [ResponseType(typeof(void))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult UpdateCategory(int id, Category Category)
         {
             if (!ModelState.IsValid)
@@ -136,6 +141,8 @@ namespace WestSideLuigis.Controllers
         [ResponseType(typeof(Category))]
         [HttpPost]
         [Route("api/CategoryData/DeleteCategory/{id}")]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult DeleteCategory(int id)
         {
             Category Category = db.Categories.Find(id);

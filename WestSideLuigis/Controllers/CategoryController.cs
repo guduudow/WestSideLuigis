@@ -41,6 +41,8 @@ namespace WestSideLuigis.Controllers
         }
 
         // GET: Category/New
+        [Authorize(Roles = "Admin")]
+
         public ActionResult New()
         {
             return View();
@@ -48,6 +50,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Category/Create
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Create(Category category)
         {
             // Add a new category to the Category data
@@ -88,6 +92,8 @@ namespace WestSideLuigis.Controllers
 
 
         // GET: Category/DeleteConfirm/5
+        [Authorize(Roles = "Admin")]
+
         public ActionResult DeleteConfirm(int id)
         {
             // Retrieve category details for deletion confirmation
@@ -100,6 +106,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Category/Delete/5
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Delete(int id)
         {
             // Delete a category

@@ -145,6 +145,7 @@ namespace TorontoBeerDirectory.Controllers
         // POST: api/BeerData/UpdateBeer5
         [ResponseType(typeof(void))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public IHttpActionResult UpdateBeer(int id, Beer beer)
         {
             Debug.WriteLine("I have reached the update beer method");
@@ -199,6 +200,8 @@ namespace TorontoBeerDirectory.Controllers
         /// https://stackoverflow.com/questions/28369529/how-to-set-up-a-web-api-controller-for-multipart-form-data
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult UploadBeerPic(int id)
         {
             bool haspic = false;
@@ -280,6 +283,8 @@ namespace TorontoBeerDirectory.Controllers
         // POST: api/BeerData/AddBeer
         [ResponseType(typeof(Beer))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult AddBeer(Beer beer)
         {
             if (!ModelState.IsValid)
@@ -308,6 +313,8 @@ namespace TorontoBeerDirectory.Controllers
         // DELETE: api/BeerData/DeleteBeer/5
         [ResponseType(typeof(Beer))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult DeleteBeer(int id)
         {
             Beer beer = db.Beers.Find(id);

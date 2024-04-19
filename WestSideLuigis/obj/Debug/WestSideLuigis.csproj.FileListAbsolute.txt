@@ -257,3 +257,4 @@ C:\Users\erkoa\Desktop\WestSideLuigis\WestSideLuigis\WestSideLuigis\obj\Debug\We
 C:\Users\erkoa\Desktop\WestSideLuigis\WestSideLuigis\WestSideLuigis\obj\Debug\WestSideLuigis.dll
 C:\Users\erkoa\Desktop\WestSideLuigis\WestSideLuigis\WestSideLuigis\obj\Debug\WestSideLuigis.pdb
 C:\Users\hanna\source\repos\WestSideLuigis\WestSideLuigis\obj\Debug\WestSideLuigis.Migrations.ListBeersForMenuItems.resources
+C:\Users\erkoa\Desktop\WestSideLuigis\WestSideLuigis\WestSideLuigis\obj\Debug\WestSideLuigis.Migrations.ListBeersForMenuItems.resources

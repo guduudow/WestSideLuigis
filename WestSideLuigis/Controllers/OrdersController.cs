@@ -74,6 +74,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Orders/AddMenuItemToOrder/5/10
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult AddMenuItemToOrder(int orderId, int menuItemId)
         {
             HttpResponseMessage response = client.PostAsync($"AddMenuItemToOrder/{orderId}/{menuItemId}", null).Result;
@@ -89,6 +91,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Order/RemoveMenuItemFromOrder/5/10
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult RemoveMenuItemFromOrder(int orderId, int menuItemId)
         {
             HttpResponseMessage response = client.PostAsync($"RemoveMenuItemFromOrder/{orderId}/{menuItemId}", null).Result;

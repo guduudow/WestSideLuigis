@@ -83,6 +83,8 @@ namespace WestSideLuigis.Controllers
         // POST: api/BreweryData/UpdateBrewery/1
         [ResponseType(typeof(void))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult UpdateBrewery(int id, Brewery brewery)
         {
             if (!ModelState.IsValid)
@@ -133,6 +135,8 @@ namespace WestSideLuigis.Controllers
         /// https://stackoverflow.com/questions/28369529/how-to-set-up-a-web-api-controller-for-multipart-form-data
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult UploadBreweryPic(int id)
         {
             bool haspic = false;
@@ -214,6 +218,8 @@ namespace WestSideLuigis.Controllers
         // POST: api/BreweryData/AddBrewery
         [ResponseType(typeof(Brewery))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult AddBrewery(Brewery brewery)
         {
             if (!ModelState.IsValid)
@@ -242,6 +248,8 @@ namespace WestSideLuigis.Controllers
         // DELETE: api/BreweryData/DeleteBrewery/1
         [ResponseType(typeof(Brewery))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult DeleteBrewery(int id)
         {
             Brewery brewery = db.Breweries.Find(id);
