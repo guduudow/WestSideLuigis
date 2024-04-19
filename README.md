@@ -8,3 +8,13 @@ All features recieved full CRUD functionality which included a Beer and Brewery 
 
 ## Addon Feature
 An extra feature seen in this project is the ability to upload images for beers and breweries. By default if there is no image uploaded it will remain as a generic image for all entries, however once updated with an image of the users choosing it will be visible. 
+
+## Pages on the website
+![Home](images/Home.png)
+![Home](images/breweries.png)
+![Home](images/beer.png)
+![Home](images/Event.png)
+![Home](images/Attendee.png)
+![Home](images/menu.png)
+![Home](images/menuitem.png)
+
