@@ -83,6 +83,8 @@ namespace WestSideLuigis.Controllers
         /// <returns>An IHttpActionResult indicating success or failure.</returns>
         [HttpPost]
         [Route("api/OrderData/AddMenuItemToOrder/{orderId}/{menuItemId}")]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult AddMenuItemToOrder(int orderId, int menuItemId)
         {
             var order = db.Orders.Find(orderId);
@@ -111,6 +113,8 @@ namespace WestSideLuigis.Controllers
         /// <returns>An IHttpActionResult indicating success or failure.</returns>
         [HttpPost]
         [Route("api/OrderData/RemoveMenuItemFromOrder/{orderId}/{menuItemId}")]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult RemoveMenuItemFromOrder(int orderId, int menuItemId)
         {
             var order = db.Orders.Find(orderId);

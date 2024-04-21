@@ -84,6 +84,8 @@ namespace WestSideLuigis.Controllers
         /// <returns>The added menu item.</returns>
         [ResponseType(typeof(MenuItem))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult AddMenuItem(MenuItem menuitem)
         {
             if (!ModelState.IsValid)
@@ -107,6 +109,8 @@ namespace WestSideLuigis.Controllers
         /// <returns>No content.</returns>
         [ResponseType(typeof(void))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult Update(int id, MenuItem menuitem)
         {
             if (!ModelState.IsValid)
@@ -150,6 +154,8 @@ namespace WestSideLuigis.Controllers
         [ResponseType(typeof(MenuItem))]
         [HttpPost]
         [Route("api/MenuItemData/DeleteMenuItem/{id}")]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult DeleteMenuItem(int id)
         {
             MenuItem menuitem = db.MenuItems.Find(id);

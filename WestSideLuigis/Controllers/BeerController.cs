@@ -112,6 +112,8 @@ namespace WestSideLuigis.Controllers
         /// </example>
 
         // GET: Beer/New
+        [Authorize(Roles = "Admin")]
+
         public ActionResult New()
         {
             //info about all breweries in the database
@@ -137,6 +139,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Beer/Create
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Create(Beer beer)
         {
             Debug.WriteLine("the json payload is: ");
@@ -178,6 +182,8 @@ namespace WestSideLuigis.Controllers
         /// </example>
 
         // GET: Beer/Edit/3
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Edit(int id)
         {
             UpdateBeer ViewModel = new UpdateBeer();
@@ -213,6 +219,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Beer/Update/3
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Update(int id, Beer beer, HttpPostedFileBase BeerPic)
         {
             string url = "beerdata/updatebeer/" + id;
@@ -259,6 +267,8 @@ namespace WestSideLuigis.Controllers
         /// </example>
 
         // GET: Beer/Delete/3
+        [Authorize(Roles = "Admin")]
+
         public ActionResult DeleteConfirm(int id)
         {
             string url = "beerdata/findbeer/" + id;
@@ -281,6 +291,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Beer/Delete/5
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Delete(int id)
         {
             string url = "beerdata/deletebeer/" + id;

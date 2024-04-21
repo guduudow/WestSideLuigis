@@ -107,6 +107,8 @@ namespace WestSideLuigis.Controllers
 
         [ResponseType(typeof(void))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult UpdateReception(int id, Reception Reception)
         {
             if (!ModelState.IsValid)
@@ -158,6 +160,8 @@ namespace WestSideLuigis.Controllers
 
         [ResponseType(typeof(Reception))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult AddReception(Reception Reception)
         {
             if (!ModelState.IsValid)
@@ -189,6 +193,8 @@ namespace WestSideLuigis.Controllers
 
         [ResponseType(typeof(Reception))]
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public IHttpActionResult DeleteReception(int id)
         {
             Reception Reception = db.Receptions.Find(id);

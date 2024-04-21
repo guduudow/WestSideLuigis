@@ -88,6 +88,8 @@ namespace WestSideLuigis.Controllers
 
         //POST: Reception/Add/{id}
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Add(int id, int attendeeid)
         {
             Debug.WriteLine("Attempting to associate reception id" + id + " with attendeeid " + attendeeid);
@@ -103,6 +105,8 @@ namespace WestSideLuigis.Controllers
 
         //GET: Reception/Remove/{id}?AttendeeID={attendeeid}
         [HttpGet]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Remove(int id, int attendeeid)
         {
             Debug.WriteLine("Attempting to remove reception id" + id + " with attendeeid " + attendeeid);
@@ -121,6 +125,8 @@ namespace WestSideLuigis.Controllers
         }
 
         // GET: Reception/New
+        [Authorize(Roles = "Admin")]
+
         public ActionResult New()
         {
             return View();
@@ -128,6 +134,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Reception/Create
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Create(Reception reception)
         {
             Debug.WriteLine("The name of the inputted reception is ");
@@ -157,6 +165,8 @@ namespace WestSideLuigis.Controllers
         }
 
         // GET: Reception/Edit/5
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Edit(int id)
         {
             string url = "Receptiondata/findreception/" + id;
@@ -167,6 +177,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Reception/Update/5
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Update(int id, Reception reception)
         {
             string url = "Receptiondata/updatereception/" + id;
@@ -186,6 +198,8 @@ namespace WestSideLuigis.Controllers
         }
 
         // GET: Reception/DeleteConfirm/5
+        [Authorize(Roles = "Admin")]
+
         public ActionResult DeleteConfirm(int id)
         {
             string url = "Receptiondata/findreception/" + id;
@@ -196,6 +210,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Reception/Delete/5
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Delete(int id, Reception reception)
         {
             string url = "Receptiondata/deletereception/" + id;

@@ -55,6 +55,8 @@ namespace WestSideLuigis.Controllers
         }
 
         // GET: Menu/New
+        [Authorize(Roles = "Admin")]
+
         public ActionResult New()
         {
             // View for adding a new menu item
@@ -63,6 +65,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Menu/Create
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Create(MenuItem menuitem)
         {
             // Add a new menu item
@@ -82,6 +86,8 @@ namespace WestSideLuigis.Controllers
         }
 
         // GET: Menu/Edit/5
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Edit(int id)
         {
             // View for editing a menu item
@@ -95,6 +101,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Menu/Update/5
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Update(int id, MenuItem menuitem)
         {
             // Update a menu item
@@ -114,6 +122,8 @@ namespace WestSideLuigis.Controllers
         }
 
         // GET: Menu/DeleteConfirm/5
+        [Authorize(Roles = "Admin")]
+
         public ActionResult DeleteConfirm(int id)
         {
             // Confirmation view for deleting a menu item
@@ -125,6 +135,8 @@ namespace WestSideLuigis.Controllers
 
         // POST: Menu/Delete/5
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public ActionResult Delete(int id)
         {
             // Delete a menu item
